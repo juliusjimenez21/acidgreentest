@@ -1,0 +1,72 @@
+{%- for block in section.blocks -%}
+  {%- case block.type -%}
+    {%- when 'announcement-acid' -%}
+      <div class="announcement-bar-acid {% if block.settings.show_hp == true %} hp_only {% endif %}" role="region" aria-label="{{ 'sections.header.announcement-acid.title' | t }}" style="background-color: {{ block.settings.color_background }}; color: {{ block.settings.color_title }};">
+          {%- if block.settings.text != blank -%}
+              {{ block.settings.text | escape }}
+          {%- endif -%}
+          <div class="link_wrap">
+            {%- if block.settings.link != blank -%}
+                <a href="{{ block.settings.link }}" class="announcement-bar-acid__link link link--text" style="color: {{ block.settings.color_title }};">
+            {%- endif -%}
+                {{ 'sections.header.announcement-acid.link_text' | t }}
+            {%- if block.settings.link != blank -%}
+                </a>
+            {%- endif -%}
+          </div>
+      </div>
+  {%- endcase -%}
+{%- endfor -%}
+
+{% schema %}
+{
+  "name": "t:sections.announcement-bar-acid.name",
+  "max_blocks": 12,
+  "blocks": [
+    {
+      "type": "announcement-acid",
+      "name": "t:sections.announcement-bar-acid.blocks.announcement-acid.name",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_hp",
+          "label": "Show to Home page only?",
+          "default": false
+        },
+        {
+          "type": "color",
+          "id": "color_background",
+          "label": "Background color",
+          "default": "#FFFFFF"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "t:sections.announcement-bar-acid.blocks.announcement-acid.settings.text.label",
+          "default": "Welcome to our store"
+        },
+        {
+          "type": "color",
+          "id": "color_title",
+          "label": "Text color",
+          "default": "#000000"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:sections.announcement-bar-acid.blocks.announcement-acid.settings.link.label"
+        }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "announcement-acid"
+      }
+    ]
+  }
+}
+{% endschema %}
+
+

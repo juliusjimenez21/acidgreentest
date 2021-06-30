@@ -172,6 +172,10 @@
   },
   "sections": {
     "header": {
+      "announcement-acid": {
+        "title": "Announcement",
+        "link_text": "Shop Now"
+      },
       "announcement": "Announcement",
       "menu": "Menu",
       "cart_count": {

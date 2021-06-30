@@ -160,6 +160,25 @@
     }
   },
   "sections": {
+    "announcement-bar-acid": {
+      "name": "Announcement bar - Acid",
+      "blocks": {
+        "announcement-acid": {
+          "name": "Announcement",
+          "settings": {
+            "text": {
+              "label": "Text"
+            },
+            "color_scheme": {
+              "label": "Color scheme"
+            },
+            "link": {
+              "label": "Link"
+            }
+          }
+        }
+      }
+    },
     "announcement-bar": {
       "name": "Announcement bar",
       "blocks": {
